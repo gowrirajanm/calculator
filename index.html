@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="calculator">
+            <input type="text" placeholder="0" id="display-screen">
+            <button type="button" onclick="ac()" class="gray-color">AC</button>
+            <button type="button" onclick="del()" class="gray-color">DEL</button>
+            <button type="button" onclick="display('%')" class="gray-color">%</button>
+            <button type="button" onclick="display('/')" class="orange-color">/</button>
+            <button type="button" onclick="display(7)" class="black-color">7</button>
+            <button type="button" onclick="display(8)" class="black-color">8</button>
+            <button type="button" onclick="display(9)" class="black-color">9</button>
+            <button type="button" onclick="display('*')" class="orange-color">*</button>
+            <button type="button" onclick="display(4)" class="black-color">4</button>
+            <button type="button" onclick="display(5)" class="black-color">5</button>
+            <button type="button" onclick="display(6)" class="black-color">6</button>
+            <button type="button" onclick="display('-')" class="orange-color">-</button>
+            <button type="button" onclick="display(1)" class="black-color">1</button>
+            <button type="button" onclick="display(2)" class="black-color">2</button>
+            <button type="button" onclick="display(3)" class="black-color">3</button>
+            <button type="button" onclick="display('+')" class="orange-color">+</button>
+            <button type="button" onclick="display(0)" class="black-color">0</button>
+            <button type="button" onclick="display('.')" class="black-color">.</button>
+            <button type="button" onclick="calculate()" class="equal">=</button>
+        </div>
+    </div>
+
+    <script>
+        let screen = document.getElementById("display-screen");
+
+        function display(num){
+            screen.value += num;
+        }
+
+        function ac(){
+            screen.value = "";
+        }
+
+        function del(){
+            screen.value = screen.value.slice(0,-1);
+        }
+        
+        function calculate(){
+            screen.value = eval(screen.value);
+        }
+    </script>
+</body>
+</html>
